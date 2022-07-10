@@ -1,0 +1,76 @@
+<main class="main-layoutProduct">
+
+    <section class="flag">
+        <div class="panier" id="panier">
+            <a href="<?= url('/basket') ?>"><img src="../images/icons/ajouter-un-panier.png" alt="icone panier"></a>
+        </div>
+    </section>
+
+    <section class="content-product">
+        <section class="images-product">
+
+            <div>
+                <div class="big-img">
+                    <img src="<?= $products[0]['product_image'] ?>" alt="">
+                </div>
+
+                <div class="little-img">
+                    <img src="<?= $products[0]['product_image'] ?>" alt="">
+                    <img src="<?= $products[0]['product_image_hover'] ?>" alt="">
+
+                    <?php if ($products[0]['product_image3']) :{ ?>
+                        <img src="<?= $products[0]['product_image3'] ?>" alt="">
+                    <?php } endif; ?>
+
+                    <?php if ($products[0]['product_image4']) : ?>
+                        <img src="<?= $products[0]['product_image4'] ?>" alt="">
+                    <?php endif; ?>
+                </div>
+
+            </div>
+
+            <div>
+                <div class="description-add">
+                    <h3><?= $products[0]['name_product'] ?></h3>
+                    <p class="price"><?= $products[0]['price_product'] ?>€</p>
+                    <p>Référence produit : 000000<?= $products[0]['id'] ?></p>
+                    <!-- à voir pour prendre l'id directement dans le get_ID -->
+                    <p class="description-product"><?= nl2br($products[0]['description_product']) ?></p>
+
+                    <div class="choice">
+
+                        <?php if ($products[0]['label']): ?>
+                            <label for="size">Sélectionnez la taille</label>
+                            <select id="size">
+                                <?php foreach ($products as $product): ?>
+                                    <option><?= $product['label'] ?></option>
+                                <?php endforeach ?>
+                            </select>
+                        <?php endif; ?>
+
+
+                        <label for="quantity">Sélectionnez la quantité</label>
+                        <input type="number" id="quantity" min="1" value="1">
+
+
+                        <input type="hidden" id="id" value="<?= $products[0]['id'] ?>">
+                        <input type="hidden" id="product-name" value="<?= $products[0]['name_product'] ?>">
+                        <input type="hidden" id="product-price" value="<?= $products[0]['price_product'] ?>">
+                        <input type="hidden" id="product-image" value="<?= $products[0]['product_image'] ?>">
+
+                        <button class="addBasket" type="submit">Ajouter au panier</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="more-products">
+            <div>Vous aimerez peut-être aussi</div>
+            <div>
+                liste de 3-4 produits de la même catégorie que celui observé (en flex-direction row)
+            </div>
+
+        </section>
+
+    </section>
+</main>

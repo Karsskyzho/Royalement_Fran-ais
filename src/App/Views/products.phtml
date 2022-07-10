@@ -1,0 +1,32 @@
+<main class="main-product">
+
+    <section class="flag">
+        <div class="panier" id="panier">
+            <a href="<?= url('/basket') ?>"><img src="../images/icons/ajouter-un-panier.png" alt="icone panier"></a>
+        </div>
+    </section>
+
+    <div id="scroll_to_top">
+        <a href="#top"><img src="../../../images/icons/fleche.png" alt="Retourner en haut"/></a>
+    </div>
+
+    <section class="gallery">
+        <?php foreach ($products as $product): ?>
+            <div class="gallery_content">
+                <a href="<?= url('/layoutProduct?id=' . $product['id']) ?>">
+                    <img class="hoverOut" src=" <?= $product['product_image'] ?>" alt="">
+                    <img class="hoverOn" src=" <?= $product['product_image_hover'] ?>" alt="">
+                    <div class="title-price">
+                        <p><?= $product['name_product'] ?></p>
+                        <p><?= $product['price_product'] ?>€</p>
+                    </div>
+                </a>
+            </div>
+        <?php endforeach; ?>
+    </section>
+</main>
+
+
+
+
+

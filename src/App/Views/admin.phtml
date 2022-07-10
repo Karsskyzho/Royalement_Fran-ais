@@ -1,0 +1,120 @@
+<main class="main-admin">
+    <section class="section-vade-mecum">
+        <div>
+            <h4>Pour insérer un nouveau produit, veuillez posséder toutes les informations énumérées ci-dessous :</h4>
+            <ul>
+                <li>Le nom du produit (qui sera affiché tel quel sur le site).</li>
+                <li>La description du produit (qui sera affichée tel quelle sur le site).</li>
+                <li>Le prix du produit (uniquement un nombre, le symbole € sera ajouté automatiquement).</li>
+                <li>La catégorie du produit (savon, chaussures, bustes, ou autre).</li>
+                <li>La catégorie de la taille (0 si le produit n'a pas de taille, 1 pour les tailles de chaussures entre 35 et 46, 2 pour les tailles de ceintures).</li>
+                <li>Au moins trois images pour votre produit (la première sera celle affichée par défaut, la seconde celle affichée au survol de l'image, et les autres seront affichées sur la page du produit).</li>
+                <li>Vous pouvez ajouter jusqu'à 5 photos au total.</li>
+                <li>Vos photos doivent impérativement être placées dans le dossier 'images' et dans le bon dossier en fonction de sa catégorie.</li>
+                <li>Ecrivez le nom du dossier suivi d'un '/' puis le nom du fichier, sans oublier l'extension (toutes les extensions de photos sont acceptées, mais les jpg/png sont préférables).</li>
+                <li>Par exemple pour les savons : savons/Savon-patchouli-big.jpg</li>
+                <li>Vous pouvez choisir de mettre en vedette votre produit. </li>
+            </ul>
+        </div>
+    </section>
+    <section class="section-formulaire">
+        <form method="post" class="admin-formulaire">
+            <div class="div-one">
+                <div>
+                    <label for="name">Nom du produit</label>
+                    <input type="text" name="name" id="name">
+                </div>
+                <div>
+                    <label for="description">Description du produit</label>
+                    <textarea name="description" id="description" rows="12" cols="27"></textarea>
+                </div>
+                <div>
+                    <label for="price">Prix du produit</label>
+                    <input type="number" name="price" id="price" min="1" value="1">
+                </div>
+            </div>
+            <div class="div-two">
+                <fieldset>
+                    <legend>Sélectionnez une catégorie</legend>
+                    <div class="input-category">
+                        <div>
+                            <input type="radio" name="category" id="chaussures"  value="chaussures">
+                            <label for="chaussures">chaussures</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="category" id="savon"  value="savon">
+                            <label for="savon">savon</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="category" id="buste"  value="buste" >
+                            <label for="bust">buste</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="category" id="autre"  value="autre" >
+                            <label for="autre">autre</label>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Sélectionnez une catégorie de taille</legend>
+                    <div class="input-size">
+                        <div>
+                            <input type="radio" name="size" id="no-size"  value="0">
+                            <label for="no-size">pas de taille</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="size" id="savon" value="1">
+                            <label for="savon">1 (tailles chaussures)</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="size" id="savon" value="2">
+                            <label for="savon">2 (tailles ceintures)</label>
+                        </div>
+                </div>
+            </fieldset>
+            </div>
+            <div class="div-three">
+                <div>
+                    <label for="name">Photo principale</label>
+                    <input type="text" name="photo1" id="photo1">
+                </div>
+
+                <div>
+                    <label for="photo2">Photo au survol</label>
+                    <input type="text" name="photo2" id="photo2">
+                </div>
+                <div>
+                    <label for="photo3">Photo supplémentaire</label>
+                    <input type="text" name="photo3" id="photo3">
+                </div>
+
+                <div>
+                    <label for="photo4">Photo supplémentaire</label>
+                    <input type="text" name="photo4" id="photo4">
+                </div>
+                <div>
+                    <label for="photo5">Photo supplémentaire</label>
+                    <input type="text" name="photo5" id="photo5">
+                </div>
+
+            </div>
+            <fieldset>
+                <legend>Produit vedette ?</legend>
+                <div class="input-feature">
+                    <div>
+                        <input type="radio" name="feature" id="yes" value="true">
+                        <label for="yes">oui</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="feature" id="no"  value="false">
+                        <label for="no">non</label>
+                    </div>
+                </div>
+            </fieldset>
+            <button type="submit" name="send-product">Envoyer en base de données</button>
+        </form>
+    </section>
+    <?php var_dump($_POST) ?>
+
+</main>

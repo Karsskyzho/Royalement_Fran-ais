@@ -1,0 +1,41 @@
+
+// https://developer.mozilla.org/fr/docs/Web/CSS/@media/prefers-reduced-motion
+//les animations sont désactivées si l'utilisateur a choisi "Aucune animation" dans ses préférences. Il a donc la priorité sur les animations.
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+        transform : translateX(0) !important;
+    }
+}
+@media (prefers-reduced-motion: no-preference) {
+    * {
+        scroll-behavior: smooth;
+    }
+}
+
+//--------------------------------Page Accueil--------------------------------------
+/* footer */
+
+@media screen and (max-width: 1605px) {
+    .contenu-footer {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .verif-logo {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .contenu-footer {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        width: 80%;
+        .bloc {
+            width: 100%;
+            padding-left: 30px;
+        }
+    }
+}

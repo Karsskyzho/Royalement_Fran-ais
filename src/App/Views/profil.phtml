@@ -1,0 +1,43 @@
+<main class="main-profil">
+
+    <form action="" method="POST">
+        <button type="submit" name="logout">Déconnexion</button>
+    </form>
+
+
+
+<div class="orders-list">
+    <h3>Vos commandes récentes</h3>
+    <!-- boucle for each qui affichera les 3 dernières commandes -->
+</div>
+
+<div class="personal">
+    <div>
+        <h3>Informations personnelles <a href="<?= url('/modifyProfil') ?>">🖉</a></h3>
+
+    </div>
+    <p>Nom : <?= htmlentities($_SESSION['user_name']) ?></p>
+
+    <p>Prénom : <?= htmlentities($_SESSION['user_firstname'])?></p>
+
+    <p> Téléphone : <?= htmlentities($_SESSION['phone_number']) ?></p>
+
+    <p>Mail : <?= htmlentities($_SESSION['email'])?></p>
+
+    <?php
+        $explode = $_SESSION['userBirthday'];
+        $number = explode("-", $explode);
+        $date = new DateTime();
+        $date->setDate($number[0], $number[1],$number[2]);
+        $birthday = $date->format('d/m/Y');
+        ?>
+    <p>date de naissance : <?= $birthday ?></p>
+
+    <hr>
+    <h3>Votre adresse</h3>
+    <p><?= htmlentities($_SESSION['address']) ?></p>
+    <p><?= htmlentities($_SESSION['user_region']) ?></p>
+    <p><?= htmlentities($_SESSION['city']) ?></p>
+</div>
+
+</main>

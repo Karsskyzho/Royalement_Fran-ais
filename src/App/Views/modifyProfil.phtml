@@ -1,0 +1,36 @@
+<main class="main-profil">
+
+    <div class="orders-list"></div>
+
+    <div class="personal">
+        <div>
+            <form action="" method="post" class="formulaire">
+                <label for="">Nom</label>
+                <input type="text" name="name" placeholder="Nom" value="<?= htmlentities($_SESSION['user_name']) ?>" required>
+
+                <label for="">Prénom</label>
+                <input type="text" name="firstname" placeholder="Prénom" value="<?= htmlentities($_SESSION['user_firstname']) ?>"
+                       required>
+
+                <label for="">Date de naissance</label>
+                <input type="date" name="birthday" value="<?= htmlentities($_SESSION['userBirthday']) ?>" required>
+
+                <label for="">Numéro de téléphone</label>
+                <input type="tel" name="phone" placeholder="06.66.66.66.66" value="<?= htmlentities($_SESSION['phone_number']) ?>"
+                       required>
+
+                <label for="">Email</label>
+                <input type="email" name="email" placeholder="Exemple@hotmail.fr" value="<?= htmlentities($_SESSION['email']) ?>"
+                       required>
+
+
+                <label for="">Adresse</label> <!-- le for se lie avec l'id du select -->
+                <input type="text" name="address" placeholder="numéro et rue" value="<?= htmlentities($_SESSION['address']) ?>"
+                       required>
+
+                <button type="submit" name="update" value="modifier">Modifier</button>
+            </form>
+        </div>
+        <?php var_dump($_POST); ?>
+    </div>
+</main>

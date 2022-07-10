@@ -1,0 +1,46 @@
+footer {
+    background-color: #2c3e50;
+    color: #fff;
+    width: 100%;
+    border-top:  1px solid #000;
+    margin-top: 20px;
+}
+
+.contenu-footer {
+    gap : 15px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: 18px;
+    padding : 50px 0 100px;
+}
+
+/* contact */
+.bloc {
+    width: 25%;
+    margin : 0 30px;
+}
+.footer-adresses p,
+.liste-horaires li{
+    padding : 10px 0;
+}
+
+.footer-adresses h3,
+.footer-contact h3,
+.footer-social h3 {
+    font-size: 1.5em;
+    padding-bottom : 20px;
+}
+
+.footer-contact p {
+    padding : 10px 0;
+}
+
+.liste-social {    
+    display: flex;
+    flex-wrap: wrap;
+}
+.footer-adress iframe {
+    width: 80%;
+}

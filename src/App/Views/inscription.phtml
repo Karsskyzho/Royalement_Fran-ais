@@ -1,0 +1,47 @@
+<main class="main-inscription">
+    <form action="" method="post" class="formulaire">
+
+        <label for="">Nom</label>
+        <input type="text" name="name" placeholder="Nom" required>
+
+        <label for="">Prénom</label>
+        <input type="text" name="firstname" placeholder="Prénom" required>
+
+        <label for="">Date de naissance</label>
+        <input type="date" name="birthday" required>
+
+        <label for="">Numéro de téléphone</label>
+        <input type="tel" name="phone" placeholder="06.66.66.66.66" required>
+
+        <label for="">Email</label>
+        <input type="email" name="email" placeholder="Exemple@hotmail.fr" required>
+        <?php if (isset($errors['name'])): ?>
+            <p class="error"><?= $errors['name'] ?></p>
+        <?php endif ?>
+        <!-- fileset avec légende ou article ou alors titre-->
+        <label for="address">Adresse</label> <!-- le for se lie avec l'id du select -->
+        <input type="text" name="address" placeholder="numéro et rue" required>
+
+        <label for="regions">Sélectionnez votre region</label>
+        <select name="regions" id="regions"></select>
+        <label for="departements">Sélectionnez votre département</label>
+        <select name="departements" id="departements"></select>
+        <label for="city">Sélectionnez votre ville</label>
+        <select name="city" id="city"></select>
+
+
+        <label for="">Mot de passe</label>
+        <input type="password" name="password" required>
+        <?php if (isset($errors['password'])): ?>
+            <p class="error"><?= $errors['password'] ?></p>
+        <?php endif ?>
+        <label for="">Confirmer votre mot de passe</label>
+        <input type="password" name="password_confirm" required>
+        <?php if (isset($errors['passwordConfirme'])): ?>
+            <p class="error"><?= $errors['passwordConfirme'] ?></p>
+        <?php endif ?>
+
+        <button type="submit" name="create" value="S'inscrire">S'inscrire</button>
+        <p>Déjà inscrit ? Connectez-vous <a target="_blank" href="<?= url('/connectionUser') ?>">ici</a></p>
+    </form>
+</main>
